@@ -1,3 +1,4 @@
+"use client";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Inter } from "next/font/google";
@@ -10,14 +11,19 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    import("./js/jquery.min.js");
+    import("./js/main.js");
+    import("./js/particles.min.js");
+  }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
         {children}
 
-        <script src="./js/jquery.min.js"></script>
+        {/* <script src="./js/jquery.min.js"></script>
         <script src="./js/main.js"></script>
-        <script src="./js/particles.min.js"></script>
+        <script src="./js/particles.min.js"></script> */}
       </body>
     </html>
   );
