@@ -1,3 +1,4 @@
+"use client";
 const Footer = () => {
   return (
     <section className="hero p-0 odd">
