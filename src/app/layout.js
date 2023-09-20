@@ -2,7 +2,7 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Inter } from "next/font/google";
-import React,{useEffect} from "react";
+// import React,{useEffect} from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,19 +12,19 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    import("../../public/js/jquery.min.js");
-    import("../../public/js/main.js");
-    import("../../public/js/particles.min.js");
-  }, []);
+  // useEffect(() => {
+  //   import("../../public/js/jquery.min.js");
+  //   import("../../public/js/main.js");
+  //   import("../../public/js/particles.min.js");
+  // }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
         {children}
 
-        {/* <script src="./js/jquery.min.js"></script>
+        <script src="./js/jquery.min.js"></script>
         <script src="./js/main.js"></script>
-        <script src="./js/particles.min.js"></script> */}
+        <script src="./js/particles.min.js"></script>
       </body>
     </html>
   );
