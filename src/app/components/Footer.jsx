@@ -47,7 +47,7 @@ const Footer = () => {
                         <h4>Flawless Design</h4>
                         <p className="cardText">
                           Leverage has incredible ratings on the beauty and
-                          organization of the source code. It's perfect!
+                          organization of the source code. It s perfect!
                         </p>
                       </div>
                     </div>
