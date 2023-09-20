@@ -4837,3 +4837,11 @@ div#loom-companion-mv3 {
     font-size: 3rem;
   }
 }
+
+section.hero.p-0.odd.featured {
+  height: 80rem;
+}
+
+section.hero.p-0.odd {
+  height: 76rem;
+}
