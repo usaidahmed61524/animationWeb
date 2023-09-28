@@ -3922,7 +3922,6 @@ footer .copyright a:not(.btn) {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 25px 25px 75px;
 }
 
 .theme-mode-dark .modal-body h2 {
@@ -4763,6 +4762,31 @@ section.featured:after {
 
 .showcase .card .image-over img {
   height: auto;
+}
+button.smooth-anchor.ml-auto.mr-auto.mt-5.btn.bigger.primary-button.btn.btn-primary {
+  margin: auto !important;
+}
+input#formBasicPassword input#formBasicEmail {
+  color: black !important;
+}
+
+/* For Firefox */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Chrome, Safari, and Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Internet Explorer and Edge */
+input[type="number"]::-ms-clear {
+  display: none;
 }
 
 .showcase .card:hover .image-over:before,
