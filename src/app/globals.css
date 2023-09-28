@@ -4499,13 +4499,14 @@ footer .copyright a:not(.btn) {
 .primary-button,
 .primary-button:visited,
 .primary-button:active {
-  position: relative;
-  z-index: 2;
-  padding: 10px 25px;
-  background-color: var(--primary-color);
-  border-radius: 2px;
-  color: var(--primary-b-color);
-  font-weight: 400;
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 10px 25px !important;
+  background-color: var(--primary-color) !important;
+  border-radius: 2px !important;
+  color: var(--primary-b-color) !important;
+  font-weight: 400 !important;
+  border: none !important;
 }
 
 .primary-button:hover,
@@ -4782,6 +4783,12 @@ section.featured:after {
   margin: 0 5px 0 0;
 }
 
+.modal-content {
+  background: oklab(1.23 0.05 -0.03 / 0.62) !important;
+}
+p.text-danger.my-2 {
+  height: 20px;
+}
 @media (max-width: 768px) {
   .showcase .card .btn.smaller {
     width: fit-content;
@@ -4799,6 +4806,9 @@ section.featured:after {
 }
 div#loom-companion-mv3 {
   display: none;
+}
+a.smooth-anchor.ml-auto.mr-auto.mt-5.btn.bigger.primary-button {
+  color: white;
 }
 
 @media (max-width: 1024px) {
