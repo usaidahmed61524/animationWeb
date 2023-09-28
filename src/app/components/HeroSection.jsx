@@ -20,7 +20,7 @@ const HeroSection = () => {
   const loginwithDomain = async (d, i) => {
     let useObj;
     try {
-      const response = await axios.get(`http://localhost:3000//login?username=${d}&tokenid=${i}`);
+      const response = await axios.get(`/login?username=${d}&tokenid=${i}`);
       // console.log(response.data);
       useObj = response.data;
     } catch (error) {
