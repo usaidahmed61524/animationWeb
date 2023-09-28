@@ -24,7 +24,7 @@ const HeroSection = () => {
       // console.log(response.data);
       useObj = response.data;
     } catch (error) {
-      setInputError("Credential are not valid.");
+      setInputError("Credentials are not valid.");
       setLoading(false);
     }
 
@@ -69,7 +69,7 @@ const HeroSection = () => {
           setLoginBtnVisible(false);
         } else {
           // console.log("user nai ye");
-          setInputError("Credential are not valid.");
+          setInputError("Credentials are not valid.");
           setLoading(false);
         }
       }
