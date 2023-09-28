@@ -20,11 +20,11 @@ const HeroSection = () => {
   const loginwithDomain = async (d, i) => {
     let useObj;
     try {
-      const response = await axios.get(`/login?username=${d}&tokenid=${i}`);
+      const response = await axios.get(`http://localhost:3000//login?username=${d}&tokenid=${i}`);
       // console.log(response.data);
       useObj = response.data;
     } catch (error) {
-      setInputError("credential are not valid");
+      setInputError("Credential are not valid.");
       setLoading(false);
     }
 
@@ -37,7 +37,7 @@ const HeroSection = () => {
   };
   const onSubmit = async () => {
     if (!domain || !tokenId) {
-      setInputError("please fill this fields!");
+      setInputError("Please fill in these fields!");
       // setLoading(false);
 
       return;
@@ -69,7 +69,7 @@ const HeroSection = () => {
           setLoginBtnVisible(false);
         } else {
           // console.log("user nai ye");
-          setInputError("Credential are not valid");
+          setInputError("Credential are not valid.");
           setLoading(false);
         }
       }
