@@ -3936,7 +3936,9 @@ footer .copyright a:not(.btn) {
 .spinner-grow {
   color: var(--primary-color);
 }
-
+button.smooth-anchor.ml-auto.mr-auto.btn.bigger.primary-button.btn.btn-primary {
+  margin: auto !important;
+}
 .scroll-to-top {
   display: none;
   position: fixed;
