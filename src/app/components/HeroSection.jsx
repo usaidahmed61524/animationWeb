@@ -17,18 +17,19 @@ const HeroSection = () => {
   const [userName, setUserName] = useState("");
   const [loginBtnVisible, setLoginBtnVisible] = useState(true);
 
-  const loginwithDomain = async (d, i) => {
-    let useObj;
+  const loginwithDomain = async (domain, id) => {
+    let user;
     try {
-      const response = await axios.get(`/login?username=${d}&tokenid=${i}`);
-      // console.log(response.data);
-      useObj = response.data;
+      const response = await axios.get(
+        `/login?username=${domain}&tokenid=${id}`
+      );
+      user = response.data;
     } catch (error) {
       setInputError("Credentials are not valid.");
       setLoading(false);
     }
 
-    return { d, i, useObj };
+    return { domain, id, user };
   };
 
   const handleClose = () => {
@@ -37,14 +38,11 @@ const HeroSection = () => {
   };
   const onSubmit = async () => {
     if (!domain || !tokenId) {
-      setInputError("Please fill in these fields!");
-      // setLoading(false);
-
+      setInputError("Please fill all the fields");
       return;
     } else {
       const regex = /\.mmit$/;
       if (!regex.test(domain)) {
-        // setLoading(false);
         setInputError("Please enter a valid .mmit domain address.");
         return;
       } else {
@@ -57,7 +55,7 @@ const HeroSection = () => {
           setLoading(false);
         }
 
-        const user = login.useObj;
+        const user = login.user;
         const userValidate = user.success;
         if (userValidate) {
           setLoading(false);
@@ -68,7 +66,6 @@ const HeroSection = () => {
 
           setLoginBtnVisible(false);
         } else {
-          // console.log("user nai ye");
           setInputError("Credentials are not valid.");
           setLoading(false);
         }
@@ -131,12 +128,6 @@ const HeroSection = () => {
                     </div>
                   </div>
                   {loginBtnVisible ? (
-                    // <a
-
-                    //   className="smooth-anchor ml-auto mr-auto mt-5 btn bigger primary-button"
-                    // >
-                    //   SEE ALL
-                    // </a>
                     <Button
                       className="smooth-anchor ml-auto mr-auto mt-5 btn bigger primary-button"
                       onClick={handleShow}
@@ -150,7 +141,7 @@ const HeroSection = () => {
                         className="smooth-anchor ml-auto mr-auto btn bigger primary-button"
                         onClick={logOutUser}
                       >
-                        LogOut
+                        Logout
                       </Button>
                     </>
                   )}
@@ -172,7 +163,7 @@ const HeroSection = () => {
                             type="text"
                             placeholder="Domain"
                             onChange={(e) => {
-                              setDomain(e.target.value);
+                              setDomain(e.target.value.toLowerCase());
                               setInputError("");
                             }}
                           />
